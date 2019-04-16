@@ -2,13 +2,27 @@
 author: flack
 date: 2019-03-08
 desc: 前端强大的纯JS导出组件Flink.js
-
+version: v1.1.5
 */
 
 
-// (function(){
-// 	// 
-// }());
+;(function(win, doc, undefined){
+	var fk = function(opts){
+
+	}
+
+	fk.prototype = {
+		// constructor:addHtml,
+		init: function(){
+			// 
+		},
+
+		// 其他方法
+	}
+
+	win.fk = fk
+}(window, document));
+
 
 ;
 var fk = {
@@ -16,7 +30,7 @@ var fk = {
 	options: {
 		type: 'excel',  //默认excel,(excel word csv pdf image)
 		dataSource: 'json',  //默认json,(json table html)
-		workSheet: 'sheet1',  //Worksheet名称
+		sheetName: 'sheet1',  //Worksheet名称
 		sheetHeader: [],  //要导出文件的表头,eg:['姓名','年龄','住址']
 		showFirstLine: true,  //默认true,是否显示首行数据
 		data: {},  //要导出的json格式数据
@@ -392,7 +406,7 @@ var fk = {
 			<x:ExcelWorkbook>
 			<x:ExcelWorksheets>
 			<x:ExcelWorksheet>
-			<x:Name>${opts.workSheet}</x:Name>
+			<x:Name>${opts.sheetName}</x:Name>
 			<x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>
 			</x:ExcelWorksheet>
 			</x:ExcelWorksheets>
@@ -500,6 +514,7 @@ var fk = {
 		}
 	},
 };
+
 
 // 获取文件后缀名
 String.prototype.extension = function(){
